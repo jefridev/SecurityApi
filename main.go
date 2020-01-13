@@ -18,6 +18,8 @@ const defaultPort string = ":3002"
 // Migrate enables creation of initial tables.
 func Migrate(db *gorm.DB) {
 	db.AutoMigrate(&users.UserModel{})
+	db.AutoMigrate(&roles.UserRoleModel{})
+	db.AutoMigrate(&roles.RoleModel{})
 }
 
 func main() {
